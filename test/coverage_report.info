@@ -1,9 +1,0 @@
-TN:__test_Test
-SF:/home/adefe/prog/C++/CI/simple_ci_example/src/lib_server.cpp
-FN:5,_ZN6ServerC2Ev
-FNDA:1,_ZN6ServerC2Ev
-FN:7,_ZN6Server9IsEnabledEv
-FNDA:1,_ZN6Server9IsEnabledEv
-DA:5,1
-DA:7,1
-end_of_record

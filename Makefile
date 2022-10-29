@@ -35,6 +35,6 @@ make_report:
 	genhtml -o $(TEST)/coverage_report $(TEST)/coverage_report.info
 
 cleanup:
-	rm -r $(BINARIES)/*
+	rm -r $(BINARIES)/* $(TEST)/*.gcda $(TEST)/*.gcno $(TEST)/coverage_report.info
 
 

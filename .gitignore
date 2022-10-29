@@ -1,1 +1,4 @@
  build
+ lib/*
+ test/Test
+ test/coverage_report
