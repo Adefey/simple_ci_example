@@ -15,9 +15,10 @@ jobs:
           sudo apt install lcov
           sudo apt install valgrind
           sudo apt install clang-format
+          sudo pip install cppcheck
           sudo apt install clang-tidy
-          sudo apt install python
           sudo pip install cpplint
+          sudo apt install python
       - name: check
         run: make check
       - name: build_lib
