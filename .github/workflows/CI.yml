@@ -15,7 +15,7 @@ jobs:
           sudo apt install lcov
           sudo apt install valgrind
           sudo apt install clang-format
-          sudo pip install cppcheck
+          sudo apt install cppcheck
           sudo apt install clang-tidy
           sudo pip install cpplint
           sudo apt install python
