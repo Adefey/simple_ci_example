@@ -1,0 +1,40 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  CI:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: install_system
+        run: |
+          sudo apt update
+          sudo apt install libgtest-dev
+          sudo apt install make
+          sudo apt install libgmock-dev
+          sudo apt install lcov
+          sudo apt install valgrind
+          sudo apt install clang-format
+          sudo apt install clang-tidy
+          sudo apt install python
+          sudo pip install cpplint
+      - name: check
+        run: make check
+      - name: build_lib
+        run: make build_lib
+      - name: build_test
+        run: make build_test
+      - name: run_test
+        run: make run_test
+      - name: make_report
+        run: make make_report
+      - name: publish_lib
+        uses: actions/upload-artifact@v3
+        with:
+          name: libserver.a
+          path: ./lib/libserver.a
+      - name: publish_coverage_report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage_report
+          path: ./test/coverage_report
