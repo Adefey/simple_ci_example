@@ -1,4 +1,8 @@
-build/*.o
-lib/*.a
-test/Test
-test/coverage_report
+build/*
+!build/.gitempty
+lib/*
+!lib/.gitempty
+test/*
+!test/main.cpp
+!test/CMakeLists.txt
+
