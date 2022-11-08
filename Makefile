@@ -35,6 +35,5 @@ make_report:
 	genhtml -o $(TEST)/coverage_report $(TEST)/coverage_report.info
 
 cleanup:
-	find $(BINARIES) -type f -not -name ".gitempty" -delete
 	rm -r $(BINARIES)/CMakeFiles
 	rm -r $(TEST)/CMakeFiles
