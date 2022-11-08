@@ -19,13 +19,13 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lgtest -lpthread -lgcov -
 
 add_executable(Test ${SOURCE_FILES})
 
-set_source_files_properties(SOURCE ../src/lib_server.cpp APPEND PROPERTY COMPILE_DEFINITIONS -coverage)
+set_property(SOURCE ../src/lib_server.cpp APPEND PROPERTY COMPILE_OPTIONS "-coverage")
 
 target_include_directories(Test PUBLIC ${INCLUDE_DIR} ${GTEST_INCLUDE_DIRS})
 
 target_link_directories(Test PUBLIC .)
 
-target_link_libraries(Test PUBLIC ${GTEST_LIBRARIES})
+target_link_libraries(Test PUBLIC ${GTEST_LIBRARIES} pthread gcov gtest)
 
 
 
