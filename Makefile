@@ -26,6 +26,7 @@ build_test:
 	#$(COMPILER) $(COMPILER_FLAGS) -c $(TEST)/main.cpp -o $(BINARIES)/main.o -lgtest -lpthread
 	#$(COMPILER) $(COMPILER_FLAGS) $(BINARIES)/main.o $(BINARIES)/lib_server.o -o $(TEST)/Test -lgtest -lpthread -coverage -lgcov
 	cd test && cmake ./CMakeLists.txt && cmake --build .
+	cp ./build/lib* ./lib
 
 run_test:
 	valgrind $(TEST)/Test
