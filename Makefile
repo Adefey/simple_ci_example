@@ -31,8 +31,6 @@ run_test:
 	valgrind $(TEST)/Test
 
 make_report:
-	mv $(TEST)/CMakeFiles//Test.dir/home/adefe/prog/C++/CI/simple_ci_example/src/*.gcda $(TEST)/
-	mv $(TEST)/CMakeFiles//Test.dir/home/adefe/prog/C++/CI/simple_ci_example/src/*.gcno $(TEST)/
 	lcov -t $(TEST)/Test -o $(TEST)/coverage_report.info -c -d $(TEST)
 	genhtml -o $(TEST)/coverage_report $(TEST)/coverage_report.info
 
@@ -40,4 +38,3 @@ cleanup:
 	find $(BINARIES) -type f -not -name ".gitempty" -delete
 	rm -r $(BINARIES)/CMakeFiles
 	rm -r $(TEST)/CMakeFiles
-	rm $(TEST)/*.gcda $(TEST)/*.gcno
